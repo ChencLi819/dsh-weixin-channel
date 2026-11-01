@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="WeChat Channel">
+  <defs>
+    <linearGradient id="wc-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f4d3a"/>
+      <stop offset="1" stop-color="#0c2118"/>
+    </linearGradient>
+    <linearGradient id="wc-bubble" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5be08a"/>
+      <stop offset="1" stop-color="#22b25f"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="22" fill="url(#wc-bg)"/>
+  <path d="M48 20c-14.4 0-26 9.6-26 21.5 0 6.8 3.8 12.8 9.8 16.8l-2.6 8.4 9.6-4.9c3 .8 6 1.2 9.2 1.2 14.4 0 26-9.6 26-21.5S62.4 20 48 20z" fill="url(#wc-bubble)"/>
+  <circle cx="39" cy="41" r="3.2" fill="#0c2118"/>
+  <circle cx="57" cy="41" r="3.2" fill="#0c2118"/>
+  <path d="M30 62l-3 12 12-5.4" fill="none" stroke="#5be08a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

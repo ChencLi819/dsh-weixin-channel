@@ -1,0 +1,76 @@
+{
+  "name": "dsh-wechat-channel",
+  "version": "0.1.0",
+  "description": "微信渠道插件:把 agent 接进微信单聊。走腾讯官方 iLink Bot API(扫码授权机器人身份),支持文本/图片/语音收发、会话映射与工具收口。",
+  "type": "module",
+  "main": "index.js",
+  "icon": "icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client/ui.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client/",
+    "lib/",
+    "vendor/",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "tools/"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node tools/run-tests.mjs",
+    "test:unit": "node tools/selftest.mjs",
+    "test:regression": "node tools/regression.mjs",
+    "test:load": "node tools/loadtest.mjs",
+    "test:e2e": "node tools/e2e.mjs",
+    "test:qr": "node tools/qr-suite.mjs && python tools/qr-suite-check.py",
+    "verify:qr": "node tools/verify-qr.mjs",
+    "probe:qr": "node tools/probe-vendored-qr.mjs",
+    "probe:login": "node tools/probe-login.mjs",
+    "login": "node tools/login.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-agent": "^0.1.0-rc.6 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-llm": "^0.1.0-rc.6 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-session": "^0.1.0-rc.6 || ^0.2.0-rc.1",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "wechat",
+    "weixin",
+    "ilink",
+    "channel",
+    "chatbot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChencLi819/dsh-wechat-channel.git"
+  },
+  "homepage": "https://github.com/ChencLi819/dsh-wechat-channel#readme",
+  "bugs": {
+    "url": "https://github.com/ChencLi819/dsh-wechat-channel/issues"
+  },
+  "author": "ChencLi819",
+  "license": "MIT"
+}
