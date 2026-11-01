@@ -1,4 +1,4 @@
-# dsh-wechat-channel
+# dsh-weixin-channel
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D22-brightgreen.svg)](package.json)
@@ -67,13 +67,13 @@ DeepSeek Harness（DSH）插件。将 agent 接入**微信单聊**：扫码授�
 
 ```bash
 # 从 npm 安装
-dsh plugin --profile web add dsh-wechat-channel
+dsh plugin --profile web add dsh-weixin-channel
 
 # 或从源码安装
-dsh plugin --profile web add github:ChencLi819/dsh-wechat-channel
+dsh plugin --profile web add github:ChencLi819/dsh-weixin-channel
 
 # Desktop 版
-dsh plugin --profile desktop add dsh-wechat-channel
+dsh plugin --profile desktop add dsh-weixin-channel
 ```
 
 安装完成后重启 DSH。
@@ -94,7 +94,7 @@ New-Item -ItemType Directory -Force -Path (Split-Path $dst) | Out-Null
 New-Item -ItemType Junction -Path $dst -Target $src
 ```
 
-然后在 profile 的 `package.json` 的 `dsh.profile.bundles` 中加入 `dsh-wechat-channel`，重启 DSH。
+然后在 profile 的 `package.json` 的 `dsh.profile.bundles` 中加入 `dsh-weixin-channel`，重启 DSH。
 插件会写入体检文件 `~/.dsh/wechat-channel/diagnostic.json`。
 
 ### 3.3 升级与卸载
@@ -184,7 +184,7 @@ New-Item -ItemType Junction -Path $dst -Target $src
 | `enabled` | boolean | `true` | 插件总开关 |
 | `stateDir` | string | `~/.dsh/wechat-channel` | 状态目录：凭证、context token、日志、媒体 |
 | `baseUrl` | string | `https://ilinkai.weixin.qq.com` | iLink Bot API 基址 |
-| `botAgent` | string | `DSH-WeChat-Channel/0.1` | 请求中携带的调用方标识 |
+| `botAgent` | string | `dsh-weixin-channel/0.1` | 请求中携带的调用方标识 |
 | `login.autoLogin` | boolean | `true` | 启动时使用已有凭证自动登录 |
 | `login.qrDir` | string | 空（用 `stateDir`） | 二维码 PNG 落盘目录 |
 | `login.qrScale` / `login.qrQuiet` | number | `8` / `4` | 二维码渲染参数 |
@@ -426,7 +426,7 @@ node tools/run-tests.mjs
 
 ## English Overview
 
-**dsh-wechat-channel** connects a DeepSeek Harness agent to **WeChat one-to-one chats** through
+**dsh-weixin-channel** connects a DeepSeek Harness agent to **WeChat one-to-one chats** through
 Tencent's official iLink Bot API (the ClawBot channel). It performs QR-code authorization to obtain
 a bot identity, then sends and receives text, images, voice and files, mapping each WeChat user to a
 DSH session.
@@ -438,7 +438,7 @@ plus a tool restriction that limits what a WeChat session can invoke (26 tools b
 no file access, no sub-agents).
 
 ```bash
-dsh plugin --profile web add dsh-wechat-channel
+dsh plugin --profile web add dsh-weixin-channel
 ```
 
 Known limitations: group chats are not supported by the protocol, and outbound voice messages are

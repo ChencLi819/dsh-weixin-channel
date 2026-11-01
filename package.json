@@ -1,5 +1,5 @@
 {
-  "name": "dsh-wechat-channel",
+  "name": "dsh-weixin-channel",
   "version": "0.1.0",
   "description": "微信渠道插件:把 agent 接进微信单聊。走腾讯官方 iLink Bot API(扫码授权机器人身份),支持文本/图片/语音收发、会话映射与工具收口。",
   "type": "module",
@@ -65,11 +65,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChencLi819/dsh-wechat-channel.git"
+    "url": "git+https://github.com/ChencLi819/dsh-weixin-channel.git"
   },
-  "homepage": "https://github.com/ChencLi819/dsh-wechat-channel#readme",
+  "homepage": "https://github.com/ChencLi819/dsh-weixin-channel#readme",
   "bugs": {
-    "url": "https://github.com/ChencLi819/dsh-wechat-channel/issues"
+    "url": "https://github.com/ChencLi819/dsh-weixin-channel/issues"
   },
   "author": "ChencLi819",
   "license": "MIT"

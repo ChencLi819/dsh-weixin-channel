@@ -1,5 +1,5 @@
 // ENTRY_VERSION = '0.1.0+34'
-// dsh-wechat-channel —— 把 agent 接进微信(单聊)。
+// dsh-weixin-channel —— 把 agent 接进微信(单聊)。
 //
 // 走的是腾讯官方 iLink Bot API(不是客户端逆向):扫码授权出一个「机器人身份」,
 // 然后长轮询收消息、按 context_token 回消息。协议实现内置在 vendor/wechatbot
@@ -34,7 +34,7 @@ export const Config = Schema.object({
   enabled: Schema.boolean().default(true).description('是否启用微信渠道'),
   stateDir: Schema.string().default('').description('状态目录(默认 ~/.dsh/wechat-channel)'),
   baseUrl: Schema.string().default('https://ilinkai.weixin.qq.com').description('iLink Bot API 基址'),
-  botAgent: Schema.string().default('DSH-WeChat-Channel/0.1').description('调用方标识'),
+  botAgent: Schema.string().default('dsh-weixin-channel/0.1').description('调用方标识'),
   cwd: Schema.string().default('').description('微信会话的工作目录(默认继承进程)'),
   login: Schema.object({
     autoLogin: Schema.boolean().default(true).description('启动时用已有凭证自动登录'),

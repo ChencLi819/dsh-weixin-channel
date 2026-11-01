@@ -6,18 +6,18 @@
 // `require("react")` 拿到的 React 和 `react.createElement`。
 // 形状照着 dsh-meme / dsh-free-search 的 client.js 抄的(同一套机制)。
 //
-// ⚠️ `id` 必须等于**包名**(dsh-wechat-channel)。写成别的,ModuleLoader 会报
+// ⚠️ `id` 必须等于**包名**(dsh-weixin-channel)。写成别的,ModuleLoader 会报
 // 「loaded without registering ...」然后整块不显示(dsh-meme 的注释里记了这条)。
 //
 // ── 挂在哪 ──
 // `plugins.bundle.config` 插槽,key = 包名。挂上之后,
-// 侧栏「插件 → 已安装 → dsh-wechat-channel」那一页的说明文字下面就会出现这张卡片。
+// 侧栏「插件 → 已安装 → dsh-weixin-channel」那一页的说明文字下面就会出现这张卡片。
 //
 // ── 二维码从哪来 ──
 // 不重新画:直接 <img src="/wechat-channel/qr.png">,用宿主已经注册好的那个路由。
 // 二维码是插件在服务端生成并落盘的,两边各写一份迟早会不一致。
 window.__ModuleLoader__.load({
-  id: 'dsh-wechat-channel',
+  id: 'dsh-weixin-channel',
   factory: (require) => {
     var module = { exports: {} }
     var exports = module.exports
@@ -207,7 +207,7 @@ window.__ModuleLoader__.load({
       // 包那一层(key = 包名)。插件页的说明文字下面就是这儿。
       ctx.slots.inject('plugins.bundle.config', () =>
         ctx.slots.register(
-          { name: 'plugins.bundle.config', key: 'dsh-wechat-channel' },
+          { name: 'plugins.bundle.config', key: 'dsh-weixin-channel' },
           () => h(WeChatCard),
         ))
 
@@ -215,7 +215,7 @@ window.__ModuleLoader__.load({
       // 免得只有其中一个生效时看不到卡片。
       ctx.slots.inject('plugins.row.config', () =>
         ctx.slots.register(
-          { name: 'plugins.row.config', key: 'dsh-wechat-channel#wechat-channel' },
+          { name: 'plugins.row.config', key: 'dsh-weixin-channel#wechat-channel' },
           () => h(WeChatCard),
         ))
     }
